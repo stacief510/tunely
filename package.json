@@ -1,0 +1,22 @@
+{
+  "name": "tunely",
+  "version": "1.0.0",
+  "description": "my tunely app - an app for tracking a music collection",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stacief510/tunely.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stacief510/tunely/issues"
+  },
+  "homepage": "https://github.com/stacief510/tunely#readme"
+}
