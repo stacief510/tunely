@@ -24,28 +24,67 @@
         <p>Your music binder!</p>
       </div>
     </div>
-<!-- form -->
-    <section class="container">
-       <div class="row">
-        <form>
+<!-- Form start-->
+ <section  class="container">
+      <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+
+        <form id='album-form' class="form-horizontal">
+          <fieldset>
+
+            <!-- Form Name -->
+            <legend>Add New Album</legend>
+
+            <!-- Text input-->
             <div class="form-group">
-                <label for="albumSearch">Search Albums</label>
-                <input type="text" class="form-control" id="albumSearch" placeholder="Enter Album Name">
-                <small id="Artist Search" class="form-text text-muted"></small>
+              <label class="col-md-4 control-label" for="name">Album Name</label>
+              <div class="col-md-4">
+              <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
+
+              </div>
             </div>
+
+            <!-- Text input-->
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label class="col-md-4 control-label" for="artistName">Artist Name</label>
+              <div class="col-md-4">
+              <input id="textinput" name="artistName" type="text" placeholder="" class="form-control input-md">
+
+              </div>
             </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="releaseDate">Release Date</label>
+              <div class="col-md-4">
+              <input id="releaseDate" name="releaseDate" type="text" placeholder="1992" class="form-control input-md">
+
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <!-- Textarea -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="genres">Genres (separated by commas)</label>
+              <div class="col-md-4">
+                <textarea class="form-control" id="genres" name="genres">rock, pop</textarea>
+              </div>
+            </div>
+
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="submitButton">Submit to Save Album</label>
+              <div class="col-md-4">
+                <button id="submitButton" name="submitButton" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </fieldset>
         </form>
-       </div>
-     </section>   
-<!-- end of form -->
+      </div>
+      </div>
+    </section>
+
+<!-- end of Form -->
     <section class="container">
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
