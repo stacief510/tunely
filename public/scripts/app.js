@@ -5,8 +5,7 @@
  
 $(document).ready(function() {
   console.log('app.js loaded!');
-
-
+        
 
   $.ajax({
       method: 'GET',
@@ -14,21 +13,40 @@ $(document).ready(function() {
       success: handleSuccess,
       error: handleError
     });
-        function handleSuccess(albums){
-            albums.forEach(function(album){
-              renderAlbum(album);
-            });
-        }
-        function handleError (err){
-          console.log('There is an error', + err); 
-        }
+
 
   $('#album-form').on('submit', function(event){
         event.preventDefault();
         var formData = $(this).serialize();
         console.log(formData);
         this.reset();
-  });
+
+        $.ajax({
+          method: 'POST',
+          url: '/api/albums',
+          data: formData,
+          success: successfulAlbum,
+          error: handleError
+        });
+       });
+
+}); //doc ready ending. DONT DELETE
+
+  function handleSuccess(albums){
+      albums.forEach(function(album){
+        renderAlbum(album);
+      });
+  }
+  function handleError (err){
+    console.log('There is an error', + err); 
+  }
+
+  function successfulAlbum(createdAlbum){
+       renderAlbum(createdAlbum);
+      };
+  
+
+
 
 
 // this function takes a single album and renders it to the page
@@ -80,4 +98,3 @@ function renderAlbum(album) {
           </div>`);
 }
 
-}); //doc ready ending. DONT DELETE
