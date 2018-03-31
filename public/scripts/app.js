@@ -45,15 +45,23 @@ $(document).ready(function() {
        renderAlbum(createdAlbum);
       };
   
-
+$('#albums').on('click', '.add-song', function(event){
+  console.log('button clicked');
+});
 
 
 
 // this function takes a single album and renders it to the page
 function renderAlbum(album) {
 
+      var arrayOfSongStr = album.songs.map(function(eachSong){
+        return `${eachSong.trackNumber} - ${eachSong.name}`
+      });
+      var formattedSongsStr = arrayOfSongStr.join(', ');
+      
+
     $('#albums').append(` 
-      <div class="row album">
+      <div data-album-id="album._id" class="row album">
             <div class="col-md-10 col-md-offset-1">
               <div class="panel panel-default">
                 <div class="panel-body">
@@ -80,6 +88,11 @@ function renderAlbum(album) {
                           <h4 class='inline-header'>Released date:</h4>
                           <span class='album-releaseDate'>${album.releaseDate}</span>
                         </li>
+
+                         <li class="list-group-item">
+                          <h4 class='inline-header'>Songs:</h4>
+                          <span class='album-releaseDate'>${formattedSongsStr}</span>
+                        </li>
                       </ul>
                     </div>
 
@@ -88,7 +101,9 @@ function renderAlbum(album) {
 
                   <div class='panel-footer'>
                   </div>
-
+                    <div class='panel-footer'>
+                        <button class='btn btn-primary add-song'>Add Song</button>
+                    </div>
                 </div>
 
               </div>
